@@ -1,6 +1,6 @@
 import { createResource, For } from 'solid-js';
 
-export const fetchGameData = () => fetch('https://webapi-personal.adjarabet.com/getLikegames_proxy?device=0&domain=.com&quantity=20&tag=slots&period=7')
+const fetchGameData = () => fetch('https://webapi-personal.adjarabet.com/getLikegames_proxy?device=0&domain=.com&quantity=20&tag=slots&period=7')
 	.then(res => res.json())
 	.then(({list}) => list)
 	.catch(() => [])
