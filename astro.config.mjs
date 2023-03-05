@@ -12,5 +12,9 @@ export default defineConfig({
     ssr: true
   })],
   output: "server",
-  adapter: vercel()
+  adapter: vercel({
+    prerender: {
+      expiration: 60
+    }
+  })
 });

@@ -3,6 +3,7 @@ import Header from '../components/Header/Header.astro';
 import '../styles/styles.min.css';
 import '../styles/new-fonts.css';
 import { Slider } from '../state/slider';
+import Lang from '../state/lang';
 import Footer from '../components/Footer/Footer.astro';
 ---
 
@@ -15,6 +16,7 @@ import Footer from '../components/Footer/Footer.astro';
 		<title>Astro</title>
 	</head>
 	<body>
+		<Lang client:load />
 		<Slider client:load />
 		<Header />
     <slot />

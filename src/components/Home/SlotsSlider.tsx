@@ -1,5 +1,6 @@
 import { createResource, For } from 'solid-js';
-import { fetchGameData } from '../../resources/sliders';
+
+export const fetchGameData = async () => await (await fetch('https://webapi-personal.adjarabet.com/getLikegames_proxy?device=0&domain=.com&quantity=20&tag=slots&period=7')).json();
 
 export const SlotsSlider = () => {
   const [slides] = createResource(fetchGameData);
