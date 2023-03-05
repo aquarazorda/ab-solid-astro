@@ -1,6 +1,9 @@
 import { createResource, For } from 'solid-js';
 
-export const fetchGameData = async () => await (await fetch('https://webapi-personal.adjarabet.com/getLikegames_proxy?device=0&domain=.com&quantity=20&tag=slots&period=7')).json();
+export const fetchGameData = () => fetch('https://webapi-personal.adjarabet.com/getLikegames_proxy?device=0&domain=.com&quantity=20&tag=slots&period=7')
+	.then(res => res.json())
+	.then(({list}) => list)
+	.catch(() => [])
 
 export const SlotsSlider = () => {
   const [slides] = createResource(fetchGameData);
@@ -17,7 +20,7 @@ export const SlotsSlider = () => {
 			</div>
 			<div class="_swiper-reset _s_b-radius-sm _s_flex _s_position-relative _s_size-h-percent--25 _s_z-1 _s_lg-overflow-hidden _s_size-h-min-px--30">
 				<swiper-container slides-per-view='7' slides-per-group={7} space-between={20}>
-					<For each={slides()?.list}>
+					<For each={slides()}>
 						{(slide) => <swiper-slide lazy={true}>
 							<div class="_s_cursor-pointer _s_display-f _s_overflow-hidden">
 								<div class="_s_size-w-percent--25 _s_flex _s_overflow-hidden _s_pl-1 _s_pr-1 _s_lg-pl-none _s_lg-pr-none">
