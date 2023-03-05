@@ -10,7 +10,7 @@ export const MainSlider = (props: Input) => {
 
   fetchMainSlides().then(setSlides);
 
-	return <div class="_s_lg-pl-2-5 _s_lg-pr-2-5">
+	return <div class="_s_lg-pl-2-5 _s_lg-pr-2-5" style={{"max-height": "436px", overflow: "hidden"}}>
 		<div class="_s_position-relative _s_lg-mb-5 _s_lg-mt-5 _s_lg-overflow-hidden">
 			<swiper-container autoplay={true} class="main-swiper _s_size-h-px--90 _s_lg-size-h-px--109 swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ng-star-inserted">
 				<For each={slides()}>
