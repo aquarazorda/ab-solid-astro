@@ -1,48 +1,123 @@
 ---
-import Header from '../components/Header/Header.astro';
-import '../styles/styles.min.css';
-import '../styles/new-fonts.css';
-import { Slider } from '../state/slider';
-import Lang from '../state/lang';
-import Footer from '../components/Footer/Footer.astro';
+import Header from "../components/Header/Header.astro";
+import { Slider } from "../state/slider";
+import Lang from "../state/lang";
+import Footer from "../components/Footer/Footer.astro";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="apple-touch-icon" sizes="57x57" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://newstatic.adjarabet.com/static/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://newstatic.adjarabet.com/static/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://newstatic.adjarabet.com/static/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://newstatic.adjarabet.com/static/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://newstatic.adjarabet.com/static/favicon/favicon-16x16.png">
-    <meta name="msapplication-TileImage" content="https://newstatic.adjarabet.com/static/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="https://newstatic.adjarabet.com/static/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="https://newstatic.adjarabet.com/static/favicon/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="https://newstatic.adjarabet.com/static/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="https://newstatic.adjarabet.com/static/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="https://newstatic.adjarabet.com/static/favicon/favicon-16x16.png"
+		/>
+		<meta
+			name="msapplication-TileImage"
+			content="https://newstatic.adjarabet.com/static/favicon/ms-icon-144x144.png"
+		/>
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="preload" href="/styles/styles.min.css" as="style" />
+		<link rel="stylesheet" href="/styles/styles.min.css" />
+		<link rel="preload" href="/styles/new-fonts.css" as="style" />
+		<link rel="stylesheet" href="/styles/new-fonts.css" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="theme-color" content="#ffffff" />
 
-		<meta name="description" content="adjarabet.com / აჭარაბეთი - ონლაინ კაზინო და ტოტალიზატორი ყველაზე დიდი მოგებებით და საუკეთესო თამაშებით: სლოტები, სპორტი ავიატორი, პოკერი, სამაგიდო თამაშები, ლაივ კაზინო, betfair exchange, კენო, ვირტუალური სპორტი,  ითამაშე შენს მოედანზე. ">
-    <meta name="og:description" content="adjarabet.com / აჭარაბეთი - ონლაინ კაზინო და ტოტალიზატორი ყველაზე დიდი მოგებებით და საუკეთესო თამაშებით: სლოტები, სპორტი ავიატორი, პოკერი, სამაგიდო თამაშები, ლაივ კაზინო, betfair exchange, კენო, ვირტუალური სპორტი,  ითამაშე შენს მოედანზე. ">
-    <meta name="og:image" content=":og_image">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <meta name="author" content="Adjarabet">
-    <meta name="application-name" content="Adjarabet">
+		<meta
+			name="description"
+			content="adjarabet.com / აჭარაბეთი - ონლაინ კაზინო და ტოტალიზატორი ყველაზე დიდი მოგებებით და საუკეთესო თამაშებით: სლოტები, სპორტი ავიატორი, პოკერი, სამაგიდო თამაშები, ლაივ კაზინო, betfair exchange, კენო, ვირტუალური სპორტი,  ითამაშე შენს მოედანზე. "
+		/>
+		<meta
+			name="og:description"
+			content="adjarabet.com / აჭარაბეთი - ონლაინ კაზინო და ტოტალიზატორი ყველაზე დიდი მოგებებით და საუკეთესო თამაშებით: სლოტები, სპორტი ავიატორი, პოკერი, სამაგიდო თამაშები, ლაივ კაზინო, betfair exchange, კენო, ვირტუალური სპორტი,  ითამაშე შენს მოედანზე. "
+		/>
+		<meta name="og:image" content=":og_image" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"
+		/>
+		<meta name="author" content="Adjarabet" />
+		<meta name="application-name" content="Adjarabet" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>adjarabet.com / აჭარაბეთი - ონლაინ კაზინო და ტოტალიზატორი ყველაზე დიდი მოგებებით და საუკეთესო თამაშებით: სლოტები, სპორტი ავიატორი, პოკერი, სამაგიდო თამაშები, ლაივ კაზინო, betfair exchange, კენო, ვირტუალური სპორტი,  ითამაშე შენს მოედანზე.</title>
+		<title>
+			adjarabet.com / აჭარაბეთი - ონლაინ კაზინო და ტოტალიზატორი ყველაზე დიდი
+			მოგებებით და საუკეთესო თამაშებით: სლოტები, სპორტი ავიატორი, პოკერი,
+			სამაგიდო თამაშები, ლაივ კაზინო, betfair exchange, კენო, ვირტუალური სპორტი,
+			ითამაშე შენს მოედანზე.
+		</title>
 	</head>
 	<body>
 		<Lang client:load />
 		<Slider client:load />
 		<Header />
-    <slot />
+		<slot />
 		<Footer />
 	</body>
 </html>
