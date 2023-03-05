@@ -1,0 +1,1 @@
+import{c as e,h as a}from"./web.f41e3f2f.js";const[n,s]=e(void 0);fetch("https://newstatic.adjarabet.com/static/langkaNew.json?v=1678038124").then(t=>t.json()).then(t=>new Map(Object.entries(t))).then(s);const o=t=>a(()=>n()?.get(t));export{o as l};

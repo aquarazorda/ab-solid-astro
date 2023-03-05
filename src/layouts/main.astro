@@ -1,0 +1,23 @@
+---
+import Header from '../components/Header/Header.astro';
+import '../styles/styles.min.css';
+import '../styles/new-fonts.css';
+import { Slider } from '../state/slider';
+import Footer from '../components/Footer/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Slider client:load />
+		<Header />
+    <slot />
+		<Footer />
+	</body>
+</html>
